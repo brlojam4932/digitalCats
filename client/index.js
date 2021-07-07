@@ -22,7 +22,7 @@ if (typeof window.ethereum !== 'undefined') {
 
 var instance;
 var user;
-var contractAddress = "0x45b04070d6E32FAE2D119034DD9cF51c15dF9a2D";
+var contractAddress = "0xB6d773CAf50e46511CA1673C3259c208d6a7B5D3";
 
 $(document).ready(function(){
   window.ethereum.enable().then(function(accounts){
