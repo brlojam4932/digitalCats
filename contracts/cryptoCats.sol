@@ -2,10 +2,11 @@
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract myCryptoCats is ERC721 {
+contract myCryptoCats is ERC721, Ownable {
 
-  constructor () ERC721( "myCryptoCats", "MCC" ) {
+  constructor () ERC721( "myCryptoCats", "MCCT" ) {
 
   }
 
@@ -58,7 +59,7 @@ Kitty[] kitties;
     genes = uint256(kitty.genes);
     }
 
-    function createKittyGen0(uint256 _genes) public returns(uint256) { // needs onlyOwner
+    function createKittyGen0(uint256 _genes) public onlyOwner returns(uint256) { // needs onlyOwner
       require(gen0Counter <= CERATION_LIMIT_GEN0, "Gen 0 should be less than creation limit gen 0" );
 
       gen0Counter++;
