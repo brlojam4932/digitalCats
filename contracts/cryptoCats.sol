@@ -7,8 +7,15 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract myCryptoCats is ERC721, Ownable {
 
   constructor () ERC721( "myCryptoCats", "MCCT" ) {
-
   }
+
+   bytes4 internal constant MAGIC_ERC721_RECEIVED = (bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")));
+
+   // call onERC721Received in the _to contract
+  bytes4 private constant _INTERFACE_ID_ERC721 = 0x80ac58cd;
+
+  // bytes4(keccat256("supportInterface(bytes4)");
+  bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
 
   event Birth(address owner, uint256 kittenId, uint256 mumId, uint256 dadId, uint256 genes);
 
