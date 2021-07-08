@@ -593,4 +593,4 @@ var abi = [
     "stateMutability": "nonpayable",
     "type": "function"
   }
-]
+];
