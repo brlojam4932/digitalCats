@@ -66,8 +66,8 @@ Kitty[] kitties;
     genes = uint256(kitty.genes);
     }
 
-    function createKittyGen0(uint256 _genes) public onlyOwner returns(uint256) { // needs onlyOwner
-      require(gen0Counter <= CERATION_LIMIT_GEN0, "Gen 0 should be less than creation limit gen 0" );
+    function createKittyGen0(uint256 _genes) public returns(uint256) { // needs onlyOwner
+      //require(gen0Counter <= CERATION_LIMIT_GEN0, "Gen 0 should be less than creation limit gen 0" );
 
       gen0Counter++;
 
