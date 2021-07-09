@@ -9,7 +9,7 @@ contract myCryptoCats is ERC721, Ownable {
   constructor () ERC721( "myCryptoCats", "MCCT" ) {
   }
 
-   bytes4 internal constant MAGIC_ERC721_RECEIVED = (bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")));
+  bytes4 internal constant MAGIC_ERC721_RECEIVED = (bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")));
 
    // call onERC721Received in the _to contract
   bytes4 private constant _INTERFACE_ID_ERC721 = 0x80ac58cd;
@@ -67,7 +67,7 @@ Kitty[] kitties;
     }
 
     function createKittyGen0(uint256 _genes) public returns(uint256) { // needs onlyOwner
-      //require(gen0Counter <= CERATION_LIMIT_GEN0, "Gen 0 should be less than creation limit gen 0" );
+      require(gen0Counter <= CERATION_LIMIT_GEN0, "Gen 0 should be less than creation limit gen 0" );
 
       gen0Counter++;
 
