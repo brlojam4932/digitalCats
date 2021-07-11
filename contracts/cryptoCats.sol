@@ -84,7 +84,7 @@ Kitty[] kitties;
     uint256 _generation, //1,2,3..etc
     uint256 _genes, // recipient
     address owner
-  ) private returns(uint256) {
+  ) public returns(uint256) {
     Kitty memory newKitties = Kitty({
       genes: _genes,
       birthTime: uint64(block.timestamp),
