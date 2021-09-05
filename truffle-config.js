@@ -34,6 +34,10 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
+  
+  "dependencies": {
+  "@openzeppelin/contracts": ">=4.3.1"
+}
 
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
