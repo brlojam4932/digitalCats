@@ -1,0 +1,10 @@
+Sorry for the delay man.
+
+About the error, is comes from the ownerOf function from your ERC721 contract.
+(@openzeppelin/contracts/token/ERC721/ERC721.sol")
+
+The problem comes from the _createKitty functions that calls _tansfer almost at the end of its execution, the problem is that you are not minting the nft before you can transfer it.
+
+So instead calling _transfer you should call _safeMint cuz that one will create the proper tokenId and then transfer it to the new owner (check the openzeppelin ERC721 contract).
+
+I have created this quick test so you can check that IT will fail if your _createKitty use _transfer.
